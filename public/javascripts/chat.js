@@ -86,19 +86,16 @@ function processUserInput(chatApp, socket) {
 var socket = io.connect();
 
 $(document).ready(function() {
-
 	var chatApp = new Chat(socket);
 
 	socket.on('nameResult', function(result) {
 
 		var message;
-
-		if(result.succuss) {
+		if(result.success) {
 			message = 'You are now known as ' + result.name + '.';
 		} else {
 			message = result.message;
 		}
-
 		$('#message').append(divSystemContentElement(message));
  
 	});
@@ -143,9 +140,9 @@ $(document).ready(function() {
 
 	$('#send-message').focus();
 
-	$('#send-message').submit(function() {
+	$('#send-button').click(function() {
 		processUserInput(chatApp,socket);
-		return false;
+		$('#send-message').val("").focus();
 	});
 
 });

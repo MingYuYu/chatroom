@@ -49,3 +49,12 @@ a{
 #help{
 	font-size: 10px;
 }
+
+#send-button{
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	cursor: default;
+	line-height: 20px;
+	background-color: #CCC;
+}
